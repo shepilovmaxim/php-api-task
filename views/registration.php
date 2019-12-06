@@ -71,7 +71,8 @@
                 fd.append('recaptcha', $("#g-recaptcha-response").val());
                 fd.append('file', $("#photo")[0].files[0]);
                 $.ajax({
-                    url: '/users/registration',  
+                    url: '/users/registration',
+                    timeout: 30000,  
                     type: 'POST',
                     data: fd,
                     success: function(data){
