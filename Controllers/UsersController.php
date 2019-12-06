@@ -41,7 +41,7 @@
               }
           }
         } catch(Exception $e) {
-            echo json_encode(["message" => $e->getMessage()])
+            echo json_encode(["message" => $e->getMessage()]);
         }
       }
 
