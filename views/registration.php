@@ -86,6 +86,9 @@
                             }
                         }
                     },
+                    error: function (xhr, msg) {
+                        console.log(msg + '\n' + xhr.responseText);
+                    },
                     cache: false,
                     contentType: false,
                     processData: false
