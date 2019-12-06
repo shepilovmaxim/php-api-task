@@ -122,7 +122,7 @@
                       die();
                   }
             } else {
-                  echo json_encode(["message" => "Token mismatch. Please try again"]);
+                  echo json_encode(["message" => "Token mismatch. Please try again $_SESSION['csrfToken']"]);
                   die();
             }
         }

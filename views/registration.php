@@ -7,7 +7,7 @@
                 <div class="card-body">
                     <div class="alert alert-danger text-center d-none" id="output"></div>
                     <form method="POST" action="/users/registration" enctype="multipart/form-data" id="register_form">
-                        <input type="hidden" id="csrf_token" name="csrf_token" value="<?php echo Security::generateCsrfToken(); ?>">
+                        <input type="hidden" id="csrf_token" name="csrf_token" value="<?php echo Security::generateCsrfToken();?>">
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
