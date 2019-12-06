@@ -6,15 +6,15 @@
         private $dbname;
 
         public function connect() {
-            /* $this->servername = "eu-cdbr-west-02.cleardb.net";
+            $this->servername = "eu-cdbr-west-02.cleardb.net";
             $this->username = "bc74fe54f3dbc7";
             $this->password = "0f226e9b";
-            $this->dbname = "heroku_2d1bb532abb7b5e"; */
+            $this->dbname = "heroku_2d1bb532abb7b5e";
 
-            $this->servername = "task.test";
+            /* $this->servername = "task.test";
             $this->username = "root";
             $this->password = "secret";
-            $this->dbname = "task";
+            $this->dbname = "task"; */
 
             try {
                 $dsn = "mysql:host=".$this->servername.";dbname=".$this->dbname;
