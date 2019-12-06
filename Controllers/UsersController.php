@@ -40,7 +40,7 @@
                   echo json_encode(["redirect" => "/users"]);
               }
           }
-        } catch($e) {
+        } catch(Exception $e) {
             echo json_encode(["message" => $e->getMessage()])
         }
       }
