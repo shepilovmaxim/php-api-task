@@ -76,6 +76,7 @@
                     data: fd,
                     success: function(data){
                         if (data) {
+                            console.log(data);
                             var parsedData = JSON.parse(data);
                             if (parsedData.redirect) {
                                 window.location.href = parsedData.redirect;
