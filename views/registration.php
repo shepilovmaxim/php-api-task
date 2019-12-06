@@ -86,7 +86,7 @@
                             }
                         }
                     },
-                    error: function (xhr, msg) {
+                    failure: function (xhr, msg) {
                         console.log(msg + '\n' + xhr.responseText);
                     },
                     cache: false,
