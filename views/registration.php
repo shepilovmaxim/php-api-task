@@ -80,7 +80,7 @@
         if (parsedData.redirect) {
             window.location.href = parsedData.redirect;
         } else {
-            document.getElementById('output').textContent(parsedData.message);
+            document.getElementById('output').textContent = parsedData.message;
             document.getElementById('output').classList.remove('d-none');
         }
     });
