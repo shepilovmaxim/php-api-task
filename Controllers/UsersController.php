@@ -22,7 +22,6 @@
       }
 
       public function registration() {
-          try {
           Auth::guest();
           if ($_SERVER["REQUEST_METHOD"] == "GET") {
               View::render('registration');
@@ -40,9 +39,6 @@
                   echo json_encode(["redirect" => "/users"]);
               }
           }
-        } catch(Exception $e) {
-            echo json_encode(["message" => $e->getMessage()]);
-        }
       }
 
       public function logout() {

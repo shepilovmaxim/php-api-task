@@ -27,7 +27,7 @@
         }
 
         public static function validateRegister($pdo) {
-            /* if (Security::checkCsrfToken($_POST['csrf_token'])) { */
+            if (Security::checkCsrfToken($_POST['csrf_token'])) {
                 $valid_extensions = ['jpeg', 'jpg', 'png'];
                 $name;
                 $password;
@@ -121,9 +121,9 @@
                       echo json_encode(["message" => "Please fill all fields"]);
                       die();
                   }
-            /* } else {
+            } else {
                   echo json_encode(["message" => "Token mismatch. Please try again" . $_SESSION['csrfToken']]);
                   die();
-            } */
+            }
         }
     }
