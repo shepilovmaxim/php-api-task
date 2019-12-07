@@ -27,7 +27,6 @@
           if ($_SERVER["REQUEST_METHOD"] == "GET") {
               View::render('registration');
           } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
-              header('Access-Control-Allow-Origin: *');
               $pdo = (new Db)->connect();
               if ($data = Validator::validateRegister($pdo)) {
                   $name = $data['name'];
