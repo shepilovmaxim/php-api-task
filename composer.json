@@ -1,5 +1,12 @@
 {
+    "name": "vagrant/task",
     "require": {
-        "ext-mbstring": "*"
-    }
+        "ext-mbstring": "^7.3"
+    },
+    "authors": [
+        {
+            "name": "Max",
+            "email": "shepilovmx@gmail.com"
+        }
+    ]
 }
