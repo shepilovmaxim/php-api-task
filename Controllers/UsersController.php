@@ -24,6 +24,7 @@
       public function registration() {
           Auth::guest();
           if ($_SERVER["REQUEST_METHOD"] == "GET") {
+              Security::generateCsrfToken();
               View::render('registration');
           } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $pdo = (new Db)->connect();

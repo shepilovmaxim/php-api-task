@@ -1,7 +1,7 @@
 <?php
     class Validator {
         public static function validateLogin($pdo) {
-            if (Security::checkCsrfToken($_POST['csrf_token'])) {
+            if (isset($_POST['csrf_token']) && Security::checkCsrfToken($_POST['csrf_token'])) {
                 if (!empty($_POST['email']) && !empty($_POST['password'])) {
                     $user = Users::findByEmail($pdo, $_POST['email']);
                     if ($user) {
@@ -122,8 +122,7 @@
                       die();
                   }
             } else {
-                $token = $_SESSION['csrfToken'];
-                  echo json_encode(["message" => "Token mismatch. Please try again ${token}"]);
+                  echo json_encode(["message" => "Token mismatch. Please try again"]);
                   die();
             }
         }
