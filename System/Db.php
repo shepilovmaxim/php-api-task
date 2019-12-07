@@ -11,11 +11,6 @@
             $this->password = "0f226e9b";
             $this->dbname = "heroku_2d1bb532abb7b5e";
 
-            /* $this->servername = "task.test";
-            $this->username = "root";
-            $this->password = "secret";
-            $this->dbname = "task"; */
-
             try {
                 $dsn = "mysql:host=".$this->servername.";dbname=".$this->dbname;
                 $options = [
