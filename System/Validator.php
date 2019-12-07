@@ -27,7 +27,7 @@
         }
 
         public static function validateRegister($pdo) {
-            if (isset($_POST['csrf_token'] && Security::checkCsrfToken($_POST['csrf_token'])) {
+            if (isset($_POST['csrf_token']) && Security::checkCsrfToken($_POST['csrf_token'])) {
                 $valid_extensions = ['jpeg', 'jpg', 'png'];
                 $name;
                 $password;
