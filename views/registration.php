@@ -60,41 +60,30 @@
         </div>
     </div>
     <script>
-        $(document).ready(function(){
-            $('#submit').on('click', function(e){ 
-                e.preventDefault();
-                var fd = new FormData();
-                fd.append('csrf_token', $("#csrf_token").val());
-                fd.append('name', $("#name").val());
-                fd.append('email', $("#email").val());
-                fd.append('password', $("#password").val());
-                fd.append('recaptcha', $("#g-recaptcha-response").val());
-                fd.append('file', $("#photo")[0].files[0]);
-                $.ajax({
-                    url: '/users/registration',
-                    timeout: 30000,  
-                    type: 'POST',
-                    data: fd,
-                    success: function(data){
-                        if (data) {
-                            console.log(data);
-                            var parsedData = JSON.parse(data);
-                            if (parsedData.redirect) {
-                                window.location.href = parsedData.redirect;
-                            } else {
-                                $('#output').html(parsedData.message);
-                                $('#output').removeClass('d-none');
-                            }
-                        }
-                    },
-                    failure: function (xhr, msg) {
-                        console.log(msg + '\n' + xhr.responseText);
-                    },
-                    cache: false,
-                    contentType: false,
-                    processData: false
-                });
-            });
+
+    document.getElementById('submit').addEventListener('click', async (e) => {
+        e.preventDefault();
+        let fd = new FormData();
+        fd.append('csrf_token', document.getElementById("csrf_token").value);
+        fd.append('name', document.getElementById("name").value);
+        fd.append('email', document.getElementById("email").value);
+        fd.append('password', document.getElementById("password").value);
+        fd.append('recaptcha', document.getElementById("g-recaptcha-response").value);
+        fd.append('file', document.getElementById("photo").files[0]);
+        let response = await fetch('/users/registration', {
+            method: 'POST',
+            body: fd
         });
+        console.log(response);
+        let parsedData = await response.json();
+        console.log(parsedData);
+        if (parsedData.redirect) {
+            window.location.href = parsedData.redirect;
+        } else {
+            document.getElementById('output').textContent(parsedData.message);
+            document.getElementById('output').classList.remove('d-none');
+        }
+    });
+
     </script>
 </div>
